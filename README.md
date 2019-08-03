@@ -2,7 +2,12 @@
 This repo contains the website for Enkel Digital.
 
 
-## Project setup
+## Landing page
+Currently Enkel Digital shows a landing site before the Vue JS app is completed.  
+The landing page can be found in the "landing_page" directory.
+
+
+## Vue JS App setup
 Installation:
 ```
 npm install
