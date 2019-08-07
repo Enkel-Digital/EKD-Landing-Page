@@ -99,14 +99,17 @@
       <div class="container">
 
         <img src="images/img_big_1.jpg" alt="Image" class="img-fluid">
+        <style>
+          .cta-big-image .img-box {
+            background: lightcoral;
+          }
+        </style>
         <div class="img-box">
           <span class="sub-title">Creative Skills</span>
           <h2>Push your brand to success</h2>
-          <!-- @Todo -->
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis eveniet, voluptatem harum
-            provident iusto modi explicabo! Aperiam velit reiciendis, eius impedit ea necessitatibus facilis
-            nobis ipsum, architecto cum, doloribus nesciunt.</p>
-          <p><a href="#" class="btn btn-outline-dark">Read More</a></p>
+          <p>We help businesses digitalise, overcome non-profitable digital marketing strategies as well as nurture the
+            crucial branding aspect of businesses.</p>
+          <p><a href="#contact-section" class="btn btn-outline-dark">Talk to Us!</a></p>
         </div>
       </div>
     </div>
@@ -118,8 +121,8 @@
         <div class="row mb-5">
           <div class="col-md-5 text-left">
             <h2 class="section-title mb-3">Our Dedicated <br> Professionals</h2>
-            <p class="lead">Meet our highly skilled consultants that are all here to help you reach your
-              greatest potential.</p>
+            <p class="lead">Meet our highly skilled consultants that will be helping you to reach your greatest
+              potential.</p>
           </div>
         </div>
         <div class="row">
@@ -211,7 +214,6 @@
               <img src="images/slide_1.jpg" alt="Image" class="img-fluid">
               <img src="images/slide_2.jpg" alt="Image" class="img-fluid">
               <img src="images/slide_3.jpg" alt="Image" class="img-fluid">
-              <img src="images/slide_4.jpg" alt="Image" class="img-fluid">
             </div>
             <div class="custom-direction">
               <a href="#" class="custom-prev">Prev</a><a href="#" class="custom-next">Next</a>
@@ -221,12 +223,9 @@
           <div class="col-lg-5 ml-auto">
             <h2 class="section-title mb-3">We Are The Consulting Agency That Cares.</h2>
             <p class="lead">You can trust us to be there for you.</p>
-            <!-- @Todo -->
-            <p>Est qui eos quasi ratione nostrum excepturi id recusandae fugit omnis ullam pariatur itaque
-              nisi voluptas impedit Quo suscipit omnis iste velit maxime.</p>
-
-            <!-- @Todo Update the link -->
-            <p><a href="#" class="btn btn-primary mr-2 mb-2">Learn More</a></p>
+            <p>We don't just work with you as consultants. We see and treat your businesses as our own because we
+              understand how much your business means to you, and our goal is to see our clients succeed.</p>
+            <p><a href="#contact-section" class="btn btn-primary mr-2 mb-2">Hear us out!</a></p>
           </div>
 
         </div>
@@ -268,7 +267,8 @@
             </div>
           </div>
 
-          <p><a href="#" class="btn btn-primary mr-2 mb-2">Discover what makes us right for you.</a></p>
+          <!-- @Todo -->
+          <!-- <p><a href="#" class="btn btn-primary mr-2 mb-2">Learn more about our consultancy philosophy</a></p> -->
         </div>
       </div>
     </section>
@@ -279,7 +279,7 @@
       <div class="container">
         <div class="row mb-5">
           <div class="col-12 text-center">
-            <h2 class="section-title mb-3">Our Services</h2>
+            <h2 class="section-title mb-3">Discover what makes us right for you</h2>
           </div>
         </div>
         <div class="row align-items-stretch">
@@ -412,7 +412,7 @@
               <!-- <p>&ldquo;Special shoutout to Growth consultants Bin You and Dominic for being super helpful during some
                 of our toughest decision making period due to long term stagnant sales growth. We were able to get back
                 on track with our targetted growth percentage within just 3 months!&rdquo;</p> -->
-              <p>&ldquo;Special shoutout to Growth consultants Bin You and Dominic for being super helpful during some
+              <p>&ldquo;Special thanks to Growth consultants Bin You and Dominic for being super helpful during some
                 of our toughest decision making period, helping us improve internal company structure, and thus
                 increasing overall productivity and employee enagement!&rdquo;</p>
             </blockquote>
@@ -527,12 +527,33 @@
     </section> -->
 
 
+    <script src="./js/jquery-3.3.1.min.js"></script>
+    <script>
+      // $(function () {
+      //     $("#test-section").load("b.txt");
+      //     $("#test-section").html = $("#test-section").html + "Hello";
+      // });
+
+      // $.post("/api/contact", console.log)
+
+      // fetch(new Request(), )
+
+      fetch("localhost://8081/api/contact", {
+        method: "POST",
+        // mode: "*same-origin"
+      })
+        .then((val) => {
+          console.log(val);
+        })
+    </script>
+
+
     <section class="site-section bg-light" id="contact-section">
       <div class="container">
         <div class="row mb-5">
           <div class="col-12 text-center">
-            <h3 class="section-sub-title">Services</h3>
-            <h2 class="section-title mb-3">Our Services</h2>
+            <!-- <h3 class="section-sub-title">Services</h3> -->
+            <h2 class="section-title mb-3">Contact Us!</h2>
           </div>
         </div>
         <div class="row">
@@ -622,8 +643,9 @@
               <div class="col-md-5">
                 <h2 class="footer-heading mb-4">About Us</h2>
                 <!-- @Todo Update this and create an actual seperate About us page -->
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque facere laudantium
-                  magnam voluptatum autem. Amet aliquid nesciunt veritatis aliquam.</p>
+                <p>We are a team of dedicated young Professionals helping both Brands like yours and expert consultants
+                  to be their best by providing consultants a dedicated support network and quality consultancy services
+                  to brands.</p>
               </div>
               <div class="col-md-3 ml-auto">
                 <h2 class="footer-heading mb-4">Quick Links</h2>
