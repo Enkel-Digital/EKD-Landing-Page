@@ -274,3 +274,11 @@ jQuery(document).ready(function($) {
   siteScroll();
 
 });
+
+
+function submit_btn(e){
+	// Prevent default behavior
+	e.preventDefault();
+	
+	
+}
