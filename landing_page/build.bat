@@ -1,0 +1,1 @@
+html-minifier --remove-comments --collapse-whitespace index.html -o dist.html
