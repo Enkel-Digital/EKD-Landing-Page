@@ -1,11 +1,12 @@
 {
-  "name": "tf",
+  "name": "EKD",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "deploy": "vue-cli-service build && firebase deploy",
+    "deploy_functions": "firebase deploy --only functions",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
