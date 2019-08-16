@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "html-minifier --remove-comments --collapse-whitespace index.html -o dist.html"
+    "build": "html-minifier --remove-comments --collapse-whitespace dev.html -o index.html"
   },
   "author": "Jaime Loeuf",
   "license": "MIT",
