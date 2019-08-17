@@ -33,6 +33,18 @@ Single command build and deploy:
 npm run deploy
 ```
 
+## Firebase functions
+To Deploy functions only, there are 2 methods:
+- By running deploy function script in project root
+```
+npm run deploy_functions
+```
+- By running deploy script in functions directory
+```
+cd .\functions
+npm run deploy
+```
+
 
 ### Vue JS app Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
