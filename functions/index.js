@@ -7,6 +7,8 @@ admin.initializeApp(functions.config().firebase);
 const sgMail = require('@sendgrid/mail');
 sgMail.setApiKey(functions.config().sendgrid.key);
 
+// Import the DB object with all the wrapper functions.
+const db = require("./db");
 
 // Function to construct a mail object for use with the SendGrid API.
 function sendGridMailObject(req) {
@@ -41,6 +43,8 @@ exports.httpEmail = functions.https.onRequest((req, res) => {
                 throw error;
             }
 
+            // Save the email and user details into the Database
+            db.saveEmail(email);
 
             // return client.API(client.emptyRequest({
             //     method: "POST",
