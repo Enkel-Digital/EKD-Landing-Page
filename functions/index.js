@@ -8,6 +8,30 @@ const sgMail = require('@sendgrid/mail');
 sgMail.setApiKey(functions.config().sendgrid.key);
 
 
+// Function to construct a mail object for use with the SendGrid API.
+function sendGridMailObject(req) {
+    // Extract the values from the POST request body to construct the email
+    const { toName, toEmail } = req.body;
+
+    return {
+        to: toEmail,
+        from: 'JJ@enkeldigital.com',
+        subject: 'New Follower',
+        text: `Hey ${toName}. You have a new follower!!! `,
+
+        // html: `<strong>Hey ${toName}. You have a new follower!!!</strong>`,
+
+        // custom templates
+        // templateId: '300e1045-5b30-4f15-8c43-41754b73fe4f',
+        // substitutionWrappers: ['{{', '}}'],
+        // substitutions: {
+        //     name: toName
+        //     // and other custom properties here
+        // }
+    };
+}
+
+
 exports.httpEmail = functions.https.onRequest((req, res) => {
     return Promise.resolve()
         .then(() => {
@@ -24,27 +48,9 @@ exports.httpEmail = functions.https.onRequest((req, res) => {
             //     body: parseBody(req.body)
             // }))
 
+            const mail = sendGridMailObject(req);
 
-            const toName = req.body.toName;
-            const toEmail = req.body.toEmail;
-
-            const msg = {
-                to: toEmail,
-                from: 'JJ@enkeldigital.com',
-                subject: 'New Follower',
-                text: `Hey ${toName}. You have a new follower!!! `,
-                // html: `<strong>Hey ${toName}. You have a new follower!!!</strong>`,
-
-                // custom templates
-                // templateId: '300e1045-5b30-4f15-8c43-41754b73fe4f',
-                // substitutionWrappers: ['{{', '}}'],
-                // substitutions: {
-                //     name: toName
-                //     // and other custom properties here
-                // }
-            };
-
-            return sgMail.send(msg)
+            return sgMail.send(mail)
                 .then(() => res.status(200).send('email sent!'))
                 .catch(err => res.status(400).send(err))
         })
