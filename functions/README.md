@@ -3,6 +3,11 @@ Firebase cloud function folder for all the functions.
 The functions for EKD and its step by step workings are listed below:
 
 ---
+## Modules
+### DB module
+The DB module exports an object that contains wrapper functions over specific database actions, which when used across different cloud functions, enforces a standard way of using the Database, and reduce repeated implementation efforts.
+
+---
 ## "Contact Me" form function
 Since firebase "spark" plan is free and does not allow external API calls, we cannot use sendgrid API via firebase cloud functions.
 - Thus to mitigate this issue, the send grid API will be called within the web page itself.
@@ -25,4 +30,4 @@ Since firebase "spark" plan is free and does not allow external API calls, we ca
 - Send a email about this to "notifications@enkeldigital.com"
     - Test using SendGrid to send the email
 - Send the user a personalized message thanking him/her for subscribing.
-    - Test using SendGrid to send the email|
+    - Test using SendGrid to send the email
