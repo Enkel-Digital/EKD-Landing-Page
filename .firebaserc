@@ -1,6 +1,6 @@
 {
   "projects": {
-    "default": "enkel-360"
+    "default": "ekd-landing-page"
   },
   "hosting": {
     "public": "./dist"
