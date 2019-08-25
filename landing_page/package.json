@@ -10,7 +10,7 @@
   },
   "author": "Jaime Loeuf",
   "license": "MIT",
-  "dependencies": {
+  "devDependencies": {
     "html-minifier": "^4.0.0"
   }
 }
