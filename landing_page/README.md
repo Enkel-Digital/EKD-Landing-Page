@@ -23,18 +23,21 @@ It is used for minification of the files, however even without it, the webpage c
 
 ---
 ## Build and Deploy
-Build process of the landing page is rather simple for now, where the main file is minified/uglified.  
+Build process of the landing page is super simple with built in NPM scripts to run.  
+Building is just where the main index.html file is minified/uglified to reduce size.  
 
-To "build" the file
+To "build" landing page
 ```bash
-# Run the build script included in the package.json file
+# Run the "build" script included in the package.json file
 # This should build the "dev.html" file into the output file "index.html"
+# You can then use any server to serve from this directory.
 npm run build
 ```
 
-To deploy the landing_page
+To deploy the landing page to firebase
 ```bash
-# Assuming the firebase.json file in the repo's root directory has been configured to host the "landing_page/" directory.
-# Deploy landing_page to firebase hosting.
-firebase deploy
+# Run the "build" script included in the package.json file
+# This builds the landing page before calling firebase cli to deploy to hosting
+# This script relies on the npm run build script
+npm run deploy
 ```
