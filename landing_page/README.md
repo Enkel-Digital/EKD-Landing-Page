@@ -8,6 +8,20 @@ This project uses the "http-minifier" as an optional dependency.
 It is used for minification of the files, however even without it, the webpage can still be served.
 
 ---
+## Files
+- index.html
+    - This is the entry HTML file for the website, but this is not user created.
+    - This is a minified file that is generated with the "html-minifier" tool
+    - Is auto generated when deploying to firebase with npm script
+    - This is generated from the "dev.html" file
+- dev.html
+    - This is the actual index.html file for development.
+    - This is the file in which the "index.html" file is generated from.
+- Others
+    - All the assets are in their respective folder
+    - Since this is a landing page, there is just 1 main file with supporting assets.
+
+---
 ## Build and Deploy
 Build process of the landing page is rather simple for now, where the main file is minified/uglified.  
 
