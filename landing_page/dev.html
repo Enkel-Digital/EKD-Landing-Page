@@ -303,7 +303,7 @@
 
 
     <!-- @Todo Work on the testimonials -->
-    <section class="site-section testimonial-wrap" id="testimonials-section">
+    <section class="site-section testimonial-wrap bg-light" id="testimonials-section">
       <div class="container">
         <div class="row mb-5">
           <div class="col-12 text-center">
@@ -599,7 +599,7 @@
 
                 <div class="col-md-12">
                   <label class="text-black" for="email">Email</label>
-                  <input type="email" id="email" class="form-control">
+                  <input type="email" id="email" class="form-control" required>
                 </div>
               </div>
 
@@ -622,7 +622,9 @@
               <!-- @Todo Work on using firebase to get the submitted info -->
               <div class="row form-group">
                 <div class="col-md-12">
-                  <button class="btn btn-primary btn-md" onclick="submit_btn(event)">Contact me!</button>
+                  <!-- <button class="btn btn-primary btn-md" onclick="submit_btn(event)">Contact me!</button> -->
+                  <!-- @Todo Change to use browser form submission instead of custom JS -->
+                  <button class="btn btn-primary btn-md">Contact me!</button>
                 </div>
               </div>
 
@@ -647,8 +649,6 @@
               <p class="mb-0 font-weight-bold">Email Address</p>
               <p class="mb-0">For enquiries, appointments and general information:</p>
               <p><a href="mailto://contact@enkeldigital.com">contact@enkeldigital.com</a></p>
-
-              <p class="mb-0 font-weight-bold">Email Address</p>
               <p class="mb-0">For Sales and Quotation:</p>
               <p class="mb-0"><a href="mailto://sales@enkeldigital.com">sales@enkeldigital.com</a></p>
             </div>
