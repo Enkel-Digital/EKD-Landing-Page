@@ -3,6 +3,10 @@
     "public": "landing_page",
     "ignore": [
       "firebase.json",
+      "dev.html",
+      "package*.json",
+      "README.md",
+      "Todo.md",
       "**/.*",
       "**/node_modules/**"
     ],
