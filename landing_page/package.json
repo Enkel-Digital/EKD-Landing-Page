@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "html-minifier --remove-comments --collapse-whitespace dev.html -o index.html",
+    "build_devcon": "html-minifier --remove-comments --collapse-whitespace devcon.html -o index.html",
+    "build_devbiz": "html-minifier --remove-comments --collapse-whitespace devbiz.html -o business.html",
+    "build": "npm run build_devcon && npm run build_devbiz",
     "deploy": "npm run build && firebase deploy --only hosting"
   },
   "author": "Jaime Loeuf",
