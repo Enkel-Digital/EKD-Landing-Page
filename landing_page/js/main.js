@@ -179,7 +179,7 @@ jQuery(document).ready(function ($) {
 	};
 	siteDatePicker();
 
-	= function siteSticky() {
+	function siteSticky() {
 		$(".js-sticky-header").sticky({ topSpacing: 0 });
 	};
 	siteSticky();
