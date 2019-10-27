@@ -3,7 +3,10 @@
     "public": "landing_page",
     "ignore": [
       "firebase.json",
-      "dev.html",
+      "devcon.html",
+      "devbiz.html",
+      "images/Archived",
+      "images/Blog",
       "package*.json",
       "README.md",
       "Todo.md",
