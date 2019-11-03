@@ -1,8 +1,6 @@
 {
   "projects": {
-    "default": "ekd-landing-page"
-  },
-  "hosting": {
-    "public": "./dist"
+    "default": "ekd-landing-page",
+    "develop": "ekd-landing-page-develop"
   }
 }

@@ -1,17 +1,12 @@
 {
   "hosting": {
-    "public": "landing_page",
+    "public": "src",
     "ignore": [
-      "firebase.json",
       "devcon.html",
       "devbiz.html",
       "images/Archived",
       "images/Blog",
-      "package*.json",
-      "README.md",
-      "Todo.md",
-      "**/.*",
-      "**/node_modules/**"
+      "**/.*"
     ],
     "rewrites": [
       {
