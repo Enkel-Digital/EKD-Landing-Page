@@ -27,17 +27,28 @@ Build process of the landing page is super simple with built in NPM scripts to r
 Building is just where the main index.html file is minified/uglified to reduce size.  
 
 To "build" landing page
-```bash
-# Run the "build" script included in the package.json file
-# This should build the "dev.html" file into the output file "index.html"
+```shell
+# Run the npm build script, to build "dev*.html" file into the output files "index.html" and "business.html"
 # You can then use any server to serve from this directory.
 npm run build
 ```
 
+To deploy the landing page to firebase staging project
+```shell
+# Run the npm build script, to build page and call firebase to deploy to hosting of the the development/staging project
+# This script relies on the npm run build script
+npm run staging
+# Landing page can be accessed from site below
+# https://ekd-landing-page-develop.web.app
+```
+
 To deploy the landing page to firebase
-```bash
-# Run the "build" script included in the package.json file
-# This builds the landing page before calling firebase cli to deploy to hosting
+```shell
+# Run the npm build script, to build page and call firebase to deploy to hosting of the production project
 # This script relies on the npm run build script
 npm run deploy
 ```
+
+
+## Firebase
+firebase.json "hosting.ignore" should only contain items to ignore in the "public" directory, which is currently set to src/
