@@ -5,10 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build_devcon": "html-minifier --remove-comments --collapse-whitespace devcon.html -o index.html",
-    "build_devbiz": "html-minifier --remove-comments --collapse-whitespace devbiz.html -o business.html",
+    "build_devcon": "html-minifier --remove-comments --collapse-whitespace ./src/devcon.html -o ./src/index.html",
+    "build_devbiz": "html-minifier --remove-comments --collapse-whitespace ./src/devbiz.html -o ./src/business.html",
     "build": "npm run build_devcon && npm run build_devbiz",
-    "staging": "npm run build_devcon && npm run build_devbiz && mv index.html ../docs && mv business.html ../docs",
+    "develop": "firebase serve --only hosting",
+    "staging": "firebase use develop && npm run build && firebase deploy --only hosting",
     "deploy": "npm run build && firebase deploy --only hosting"
   },
   "author": "Jaime Loeuf",
