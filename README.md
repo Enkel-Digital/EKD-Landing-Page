@@ -2,26 +2,34 @@
 This is the page that is served before the Vue JS app is deployed.  
 This landing page is built with a template from Color Lib, credits to them.  
 
----
+
 ## Dependencies
 This project uses the "http-minifier" as an optional dependency.  
 It is used for minification of the files, however even without it, the webpage can still be served.
 
----
+
 ## Files
+- devcon.html
+    - This is the consultant page index.html file for development.
+    - This is the file in which the "index.html" file is generated from.
+- devbiz.html
+    - This is the business page index.html file for development.
+    - This is the file in which the "business.html" file is generated from.
 - index.html
     - This is the entry HTML file for the website, but this is not user created.
     - This is a minified file that is generated with the "html-minifier" tool
     - Is auto generated when deploying to firebase with npm script
-    - This is generated from the "dev.html" file
-- dev.html
-    - This is the actual index.html file for development.
-    - This is the file in which the "index.html" file is generated from.
+    - This is generated from the "devcon.html" file
+- business.html
+    - This is the HTML file of the business facing website, this is not user created.
+    - This is a minified file that is generated with the "html-minifier" tool
+    - Is auto generated when deploying to firebase with npm script
+    - This is generated from the "devbiz.html" file
 - Others
     - All the assets are in their respective folder
-    - Since this is a landing page, there is just 1 main file with supporting assets.
+    - This is a landing page, there are just 2 main files with supporting assets.
 
----
+
 ## Build and Deploy
 Build process of the landing page is super simple with built in NPM scripts to run.  
 Building is just where the main index.html file is minified/uglified to reduce size.  

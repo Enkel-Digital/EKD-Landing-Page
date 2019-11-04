@@ -10,7 +10,7 @@
     "build": "npm run build_devcon && npm run build_devbiz",
     "develop": "firebase serve --only hosting",
     "staging": "firebase use develop && npm run build && firebase deploy --only hosting",
-    "deploy": "npm run build && firebase deploy --only hosting"
+    "deploy": "firebase use default && npm run build && firebase deploy --only hosting"
   },
   "author": "Jaime Loeuf",
   "license": "MIT",
