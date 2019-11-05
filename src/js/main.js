@@ -222,6 +222,24 @@ jQuery(document).ready(function ($) {
 
 
 function submit_btn(e) {
-	// Prevent default behavior
-	e.preventDefault();
+  // Prevent default behavior
+  e.preventDefault();
+
+  const form = {
+    "fname": document.forms['contact_form'].elements["fname"].value,
+    "lname": document.forms['contact_form'].elements["lname"].value,
+    "email": document.forms['contact_form'].elements["email"].value,
+    "subject": document.forms['contact_form'].elements["subject"].value,
+    "message": document.forms['contact_form'].elements["message"].value,
+  };
+  console.log(form); // Debug
+
+  // If neither name is given, or email is not given
+  if ((!form.fname && !form.lname) || !form.email) {
+    // Alert and ask user to redo it
+    alert("Please fill in missing items. At least fill in either your first or last name, and provide a email!");
+    return; // Break out of the function
+  }
+
+  /* Submit the details to store in database and to email sending API */
 }
