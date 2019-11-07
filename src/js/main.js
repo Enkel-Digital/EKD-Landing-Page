@@ -223,6 +223,7 @@ jQuery(document).ready(function ($) {
 
 function submit_btn(e) {
   // Prevent default behavior
+  // Prevents page from reloading and prevent the required check for the email
   e.preventDefault();
 
   const form = {
@@ -241,5 +242,8 @@ function submit_btn(e) {
     return; // Break out of the function
   }
 
-  /* Submit the details to store in database and to email sending API */
+  /**
+   * @Todo Submit details to store in database
+   * @Todo Call email sending API
+   */
 }
