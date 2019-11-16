@@ -15,6 +15,7 @@
   "author": "Jaime Loeuf",
   "license": "MIT",
   "devDependencies": {
+    "eslint": "^6.6.0",
     "html-minifier": "^4.0.0"
   }
 }
