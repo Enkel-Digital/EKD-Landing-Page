@@ -1,21 +1,22 @@
 {
-  "name": "landing_page",
-  "version": "1.0.0",
-  "description": "Landing page for EKD",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build_devcon": "html-minifier --remove-comments --collapse-whitespace ./src/devcon.html -o ./src/index.html",
-    "build_devbiz": "html-minifier --remove-comments --collapse-whitespace ./src/devbiz.html -o ./src/business.html",
-    "build": "npm run build_devcon && npm run build_devbiz",
-    "develop": "firebase serve --only hosting",
-    "staging": "firebase use develop && npm run build && firebase deploy --only hosting",
-    "deploy": "firebase use default && npm run build && firebase deploy --only hosting"
-  },
-  "author": "Jaime Loeuf",
-  "license": "MIT",
-  "devDependencies": {
-    "eslint": "^6.6.0",
-    "html-minifier": "^4.0.0"
-  }
+    "name": "landing_page",
+    "version": "1.0.0",
+    "description": "Landing page for EKD",
+    "main": "index.js",
+    "scripts": {
+        "lint:js": "./node_modules/.bin/eslint --ignore-path .gitignore --fix **/*.js",
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "build_devcon": "html-minifier --remove-comments --collapse-whitespace ./src/devcon.html -o ./src/index.html",
+        "build_devbiz": "html-minifier --remove-comments --collapse-whitespace ./src/devbiz.html -o ./src/business.html",
+        "build": "npm run build_devcon && npm run build_devbiz",
+        "develop": "firebase serve --only hosting",
+        "staging": "firebase use develop && npm run build && firebase deploy --only hosting",
+        "deploy": "firebase use default && npm run build && firebase deploy --only hosting"
+    },
+    "author": "Jaime Loeuf",
+    "license": "MIT",
+    "devDependencies": {
+        "eslint": "^6.6.0",
+        "html-minifier": "^4.0.0"
+    }
 }
