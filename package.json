@@ -1,22 +1,25 @@
 {
-    "name": "landing_page",
+    "name": "landing-page",
     "version": "1.0.0",
+    "private": true,
     "description": "Landing page for EKD",
     "main": "index.js",
     "scripts": {
         "lint:js": "./node_modules/.bin/eslint --ignore-path .gitignore --fix **/*.js",
         "test": "echo \"Error: no test specified\" && exit 1",
-        "build_devcon": "html-minifier --remove-comments --collapse-whitespace ./src/devcon.html -o ./src/index.html",
-        "build_devbiz": "html-minifier --remove-comments --collapse-whitespace ./src/devbiz.html -o ./src/business.html",
-        "build": "npm run build_devcon && npm run build_devbiz",
-        "develop": "firebase serve --only hosting",
-        "staging": "firebase use develop && npm run build && firebase deploy --only hosting",
-        "deploy": "firebase use default && npm run build && firebase deploy --only hosting"
+        "build-devcon": "html-minifier --remove-comments --collapse-whitespace ./src/devcon.html -o ./src/index.html",
+        "build-devbiz": "html-minifier --remove-comments --collapse-whitespace ./src/devbiz.html -o ./src/business.html",
+        "build-all": "npm run build-devcon && npm run build-devbiz",
+        "serve": "firebase serve --only hosting",
+        "deploy-hosting": "firebase deploy --only hosting",
+        "staging": "firebase use develop && npm run build-all && npm run deploy-hosting",
+        "deploy": "firebase use default && npm run build-all && npm run deploy-hosting"
     },
     "author": "Jaime Loeuf",
     "license": "MIT",
     "devDependencies": {
         "eslint": "^6.6.0",
+        "firebase-tools": "^7.11.0",
         "html-minifier": "^4.0.0"
     }
 }
