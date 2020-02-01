@@ -1,9 +1,12 @@
+// eslint-disable-next-line no-undef
 AOS.init({
 	duration: 800,
 	easing: "slide",
 	once: true
 });
 
+
+// eslint-disable-next-line no-undef
 jQuery(document).ready(function ($) {
 	"use strict";
 
@@ -221,19 +224,21 @@ jQuery(document).ready(function ($) {
 });
 
 
-function submit_btn(e) {
-	// Prevent default behavior
-	// Prevents page from reloading and prevent the required check for the email
+// eslint-disable-next-line no-unused-vars
+function submitBtn(e) {
+	// Prevent default behavior of reloading the page
 	e.preventDefault();
 
+	const formElement = (elementName) => document.forms["contact_form"].elements[elementName].value;
+
 	const form = {
-		"fname": document.forms["contact_form"].elements["fname"].value,
-		"lname": document.forms["contact_form"].elements["lname"].value,
-		"email": document.forms["contact_form"].elements["email"].value,
-		"subject": document.forms["contact_form"].elements["subject"].value,
-		"message": document.forms["contact_form"].elements["message"].value,
+		"fname": formElement("fname"),
+		"lname": formElement("lname"),
+		"email": formElement("email"),
+		"subject": formElement("subject"),
+		"message": formElement("message"),
+		"website": window.location.href // Get the website that the user is on, either consultant page or business page.
 	};
-	console.log(form); // Debug
 
 	// If neither name is given, or email is not given
 	if ((!form.fname && !form.lname) || !form.email) {
@@ -242,8 +247,30 @@ function submit_btn(e) {
 		return; // Break out of the function
 	}
 
-	/**
-	 * @Todo Submit details to store in database
-	 * @Todo Call email sending API
-	 */
+	// Save detail and send emails out
+	postData("https://us-central1-ekd-landing-page.cloudfunctions.net/contactForm", form)
+		.then(console.log)
+		.catch((error) => {
+			console.error(error);
+			/** @todo Show user and tell user to contact us directly */
+		});
+}
+
+// Example POST method implementation:
+async function postData(url, data) {
+	console.log(url, data);
+
+	// Default options are marked with *
+	await fetch(url, {
+		method: "POST",
+		// mode: "cors", // no-cors, *cors, same-origin
+		mode: "no-cors",
+		cache: "no-cache",
+		credentials: "same-origin", // include, *same-origin, omit
+		headers: {
+			"Content-Type": "application/json"
+		},
+		referrerPolicy: "no-referrer", // no-referrer, *client
+		body: JSON.stringify(data) // body data type must match "Content-Type" header
+	});
 }
