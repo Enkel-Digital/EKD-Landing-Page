@@ -237,9 +237,10 @@ function submitBtn(e) {
 		"email": formElement("email"),
 		"subject": formElement("subject"),
 		"message": formElement("message"),
-		"website": window.location.href // Get the website that the user is on, either consultant page or business page.
+		"website": window.location.href, // Get the website that the user is on, either consultant page or business page.,
+		"g-recaptcha-response": grecaptcha.getResponse() // Get the response token from the captcha UI
 	};
-
+  
 	// If neither name is given, or email is not given
 	if ((!form.fname && !form.lname) || !form.email) {
 		// Alert and ask user to redo it
@@ -249,7 +250,10 @@ function submitBtn(e) {
 
 	// Save detail and send emails out
 	postData("https://us-central1-ekd-landing-page.cloudfunctions.net/contactForm", form)
-		.then(console.log)
+		.then((response)=>{
+			console.log(response);
+			alert("Contact request submitted, we will reply asap. Thank you!");
+		})
 		.catch((error) => {
 			console.error(error);
 			/** @todo Show user and tell user to contact us directly */
@@ -273,4 +277,9 @@ async function postData(url, data) {
 		referrerPolicy: "no-referrer", // no-referrer, *client
 		body: JSON.stringify(data) // body data type must match "Content-Type" header
 	});
+}
+
+function captchaError(error) {
+	console.log("Captcha error: ", error);
+	alert("Captcha error encounted! Cannot submit form for now. Please try reloading the page.");
 }
