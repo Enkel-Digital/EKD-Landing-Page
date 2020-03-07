@@ -6,6 +6,17 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+  <script>
+    (function () {
+      const redirect = (URL) => window.location.replace(URL);
+      const location = window.location.hostname;
+
+      console.log(`Window location: ${location}`);
+      if (location === "business.enkeldigital.com") redirect("https://enkeldigital.com/business");
+      if (location === "ekd-landing-page.web.app" || location === "ekd-landing-page.firebaseapp.com") redirect("https://enkeldigital.com/business");
+    })();
+  </script>
+
   <!-- Font pack used throughout the site -->
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,900" rel="stylesheet">
 
@@ -414,6 +425,8 @@
                   </li>
                   <li><a href="https://www.linkedin.com/in/jeremy-tay-215679139/" target="_blank"><span
                         class="icon-linkedin"></span></a></li>
+                  <li><a href="https://www.instagram.com/thehappyharis/" target="_blank"><span
+                        class="icon-instagram"></span></a></li>
                 </ul>
                 <img src="images/Profile pictures/Jeremy.jpg" alt="Image" class="img-fluid">
               </figure>
